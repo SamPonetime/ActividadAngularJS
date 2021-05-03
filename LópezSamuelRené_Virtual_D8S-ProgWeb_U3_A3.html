@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ejercicio 3 Web</title>
+</head>
+<body ng-app = "miApp" ng-init= "a='Programación Web';">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <div>
+     <p> El nombre de la materia es: <span ng-bind= "a"></span></p>
+     <p> Escribe lo que gustes </p>
+     <input ng-model = "entrada">
+     <p>Esto es lo que estás escribiendo: {{entrada}}</p>
+    </div>
+    <div ng-controller ="ControladorInputs">
+      <p>Primer Nombre
+      <input ng-model = "entrada2"></p> 
+      <br>
+      <p>Apellidos
+      <input ng-model = "entrada3"></p> 
+      <br>
+      <p>Nombre Completo: {{entrada2 + " " + entrada3}}</p>
+    </div>
+    
+    <script>
+        var app = angular.module("miApp",[]);
+        app.controller("ControladorInputs", function($scope)
+        {
+            $scope.entrada2 = "José Armando";
+            $scope.entrada3 = "Cabrera Armendariz";
+
+        })
+    </script>
+    
+</body>
+</html>
