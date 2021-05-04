@@ -1,0 +1,42 @@
+:root {
+    --card-color: rgba(0, 139, 204, 0.719);
+    --card-body-color: rgb(40, 4, 124);
+  }
+#act1 {
+  margin: auto;
+  text-align: center;
+}
+#act1 input {
+  border-radius: 5px;
+  background-color: #def;
+}
+.spann {
+  font-size: 36px;
+}
+.card {
+  margin: 0 auto;
+  background: var(--card-color);
+  color: rgb(255, 255, 255);
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.377);
+  border-radius: 20px;
+}
+
+li {
+  padding: 0px;
+  margin: 2px;
+  border-radius: 5px;
+  border: 1px solid white;
+  width: 100%;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+li:hover {
+  color: var(--card-body-color);
+  background: white;
+}
+h1{
+    text-align: center;
+}

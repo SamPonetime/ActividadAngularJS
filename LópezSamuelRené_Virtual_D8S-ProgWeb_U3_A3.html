@@ -1,36 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="estilos.css" />
     <title>Ejercicio 3 Web</title>
-</head>
-<body ng-app = "miApp" ng-init= "a='Programación Web';">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-    <div>
-     <p> El nombre de la materia es: <span ng-bind= "a"></span></p>
-     <p> Escribe lo que gustes </p>
-     <input ng-model = "entrada">
-     <p>Esto es lo que estás escribiendo: {{entrada}}</p>
+  </head>
+  <body ng-app="miApp" ng-init="a='Programación Web';">
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"
+    ></script>
+    <div class="card" id="act1">
+      <div class="one">
+        <p>El nombre de la materia es: <br><span class="spann" ng-bind="a"></span></p>
+        <p>Escribe lo que gustes</p>
+        <input ng-model="entrada" />
+        <p>
+          Esto es lo que estás escribiendo: <br />
+          <span class="spann">{{entrada}}</span>
+        </p>
+      </div>
     </div>
-    <div ng-controller ="ControladorInputs">
-      <p>Primer Nombre
-      <input ng-model = "entrada2"></p> 
-      <br>
-      <p>Apellidos
-      <input ng-model = "entrada3"></p> 
-      <br>
-      <p>Nombre Completo: {{entrada2 + " " + entrada3}}</p>
+    <hr />
+    <div id="act1" class="card" ng-controller="ControladorInputs">
+      <div class="one">
+        <p>
+          Primer Nombre
+          <br />
+          <input ng-model="entrada2" />
+        </p>
+        <br />
+        <p>
+          Apellidos
+          <br />
+          <input ng-model="entrada3" />
+        </p>
+        <br />
+        <p>Nombre Completo: <br> <span class="spann">{{entrada2 + " " + entrada3}}</span></p>
+      </div>
     </div>
-    
-    <script>
-        var app = angular.module("miApp",[]);
-        app.controller("ControladorInputs", function($scope)
-        {
-            $scope.entrada2 = "José Armando";
-            $scope.entrada3 = "Cabrera Armendariz";
 
-        })
+    <script>
+      var app = angular.module("miApp", []);
+      app.controller("ControladorInputs", function ($scope) {
+        $scope.entrada2 = "José Armando";
+        $scope.entrada3 = "Cabrera Armendariz";
+      });
     </script>
-    
-</body>
+
+    <hr />
+    <div class="card" ng-app="ittg" ng-controller="controladorLista">
+      <h1>Mi lista</h1>
+      <br />
+      <ul>
+        <li ng-repeat="x in records">{{x}}</li>
+      </ul>
+    </div>
+
+    <script>
+      var app2 = angular.module("ittg", []);
+      app.controller("controladorLista", function ($scope) {
+        $scope.records = [
+          "1.-ANGULARJS: Curso de programación para principiantes",
+          "2.-Manual Del Guerrero: AngularJS",
+          "3.-AngularJS: Conviértete en el profesional que las compañías de software necesitan",
+          "4.-Desarrollo web ágil con Angular.js ",
+          "5.-proAngular",
+          "6.-Learning Angular",
+          "7.-Pro Angular 9",
+        ];
+      });
+    </script>
+  </body>
 </html>
